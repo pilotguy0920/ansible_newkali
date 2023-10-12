@@ -1,0 +1,7 @@
+---
+- name: Kali Linux Setup and Configuration
+  hosts: localhost
+  become: yes
+  roles:
+    - roles/install-tools
+    
