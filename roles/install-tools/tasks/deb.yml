@@ -1,5 +1,5 @@
 ---
-- name: "Install deb programs
+- name: "Install deb programs"
   become: yes
   become_method: sudo
   vars:
@@ -26,5 +26,3 @@
       apt:
         deb: "{{ item.dest }}"
       loop: "{{ deb_files }}"
-        
-  
