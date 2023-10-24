@@ -1,3 +1,4 @@
 ---
 # tasks file for roles/install-tools
 - include_tasks: apt.yml
+- include_tasks: deb.yml
