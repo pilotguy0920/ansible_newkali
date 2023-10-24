@@ -37,6 +37,7 @@
       - python3-pyqt5
       - terminator
       - python3-impacket
+      - seclists
     state: latest
   become: true
   become_method: sudo
