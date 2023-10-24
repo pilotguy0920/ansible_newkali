@@ -1,5 +1,8 @@
 ---
-# No playbook/play name here as this is a tasks file within a role
+vars:
+  deb_files:
+    - url: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+      dest: '/tmp/vscode.deb'
 
 - name: Ensure prerequisites are installed
   apt:
