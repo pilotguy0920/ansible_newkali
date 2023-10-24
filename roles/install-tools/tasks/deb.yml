@@ -1,28 +1,21 @@
 ---
-- name: "Install deb programs"
-  become: yes
-  become_method: sudo
-  vars:
-    deb_files:
-      - url: 'https://go.microsoft.com/fwlink/?LinkID=760868'
-        dest: '/tmp/vscode.deb'
+# No playbook/play name here as this is a tasks file within a role
 
-  tasks:
-    - name: Ensure prerequisites are installed
-      apt:
-        name:
-          - apt-transport-https
-          - wget
-        state: present
+- name: Ensure prerequisites are installed
+  apt:
+    name:
+      - apt-transport-https
+      - wget
+    state: present
 
-    - name: Download .deb files
-      get_url:
-        url: "{{ item.url }}"
-        dest: "{{ item.dest }}"
-      when: item.url is defined
-      loop: "{{ deb_files }}"
+- name: Download .deb files
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+  when: item.url is defined
+  loop: "{{ deb_files }}"
 
-    - name: Install .deb packages
-      apt:
-        deb: "{{ item.dest }}"
-      loop: "{{ deb_files }}"
+- name: Install .deb packages
+  apt:
+    deb: "{{ item.dest }}"
+  loop: "{{ deb_files }}"
