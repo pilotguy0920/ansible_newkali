@@ -3,5 +3,13 @@
   hosts: localhost
   become: yes
   roles:
-    - roles/install-tools
-    
+    - role: "roles/install-tools"
+    - role: "roles/configure-system"
+      users:
+        - username: "{{ ansible_user_id}}"
+          visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - ms-python.python
+            - DEVSENSE.phptools-vscode
+            - GitHub.copilot
+            - sny-security.snyk-vulnerability-scanner
