@@ -1,0 +1,24 @@
+---
+vars:
+  deb_files:
+    - url: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+      dest: '/tmp/vscode.deb'
+
+- name: Ensure prerequisites are installed
+  apt:
+    name:
+      - apt-transport-https
+      - wget
+    state: present
+
+- name: Download .deb files
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+  when: item.url is defined
+  loop: "{{ deb_files }}"
+
+- name: Install .deb packages
+  apt:
+    deb: "{{ item.dest }}"
+  loop: "{{ deb_files }}"
