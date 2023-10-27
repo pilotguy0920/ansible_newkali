@@ -38,6 +38,29 @@
       - terminator
       - python3-impacket
       - seclists
+      - nuclei
     state: latest
   become: true
   become_method: sudo
+
+- name: "Set GOROOT in zshrc for user kali"
+  lineinfile:
+    path: /home/kali/.zshrc
+    line: 'export GOROOT=/usr/lib/go'
+    state: present
+    create: yes
+
+- name: "Set GOPATH in zshrc for user kali"
+  lineinfile:
+    path: /home/kali/.zshrc
+    line: 'export GOPATH=$HOME/go'
+    state: present
+    create: yes
+
+- name: "Update GOPATH in zshrc for user kali"
+  lineinfile:
+    path: /home/kali/.zshrc
+    line: 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'
+    state: present
+    create: yes
+  
