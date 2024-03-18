@@ -2,4 +2,4 @@
 - include_tasks: apt.yml
 - include_tasks: github-repos.yml
 - include_tasks: python-tools.yml
-- include_tasks: 
+- include_tasks: go-install.yml
