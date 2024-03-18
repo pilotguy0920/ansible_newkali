@@ -4,7 +4,8 @@
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: present
-  loop:
+    executable: /home/kali/.local/share/pipx/venvs/ansible/bin/python  # Update path if needed
+   loop:
     - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
     - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
     - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
