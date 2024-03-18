@@ -1,5 +1,5 @@
 ---
-- include: apt.yml
-- include: github-repos.yml
-- include: python-tools.yml
+- include_tasks: apt.yml
+- include_tasks: github-repos.yml
+- include_tasks: python-tools.yml
 
