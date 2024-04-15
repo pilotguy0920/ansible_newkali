@@ -10,6 +10,7 @@
     - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
     - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
     - { name: 'crosslinked', url: 'git+https://github.com/m8sec/CrossLinked.git' }
+    - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git'}
 
 - name: "Upgrade pipx tools to latest version"
   community.general.pipx:
@@ -21,3 +22,4 @@
     - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
     - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
     - { name: 'crosslinked', url: 'git+https://github.com/m8sec/CrossLinked.git' }
+    - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git'}
