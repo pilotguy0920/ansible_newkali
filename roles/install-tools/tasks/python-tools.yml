@@ -1,6 +1,6 @@
 ---
 - name: Debug - Find python path in pipx environment
-  command: "{{ ansible_env.PATH }} && which python"
+  command: which python
   register: python_path
 - debug:
    var: python_path
