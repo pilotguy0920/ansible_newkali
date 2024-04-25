@@ -1,10 +1,11 @@
 ---
-- name: "Ensure pipx tools are installed"
-  command: which python
+- name: Debug - Find python path in pipx environment
+  command: "{{ ansible_env.PATH }} && which python"
   register: python_path
-- debug:
-    var: python_path.stdout
-
+  - debug:
+    var: python_path
+    
+- name: "Ensure pipx tools are installed"
   community.general.pipx:
     name: "{{ item.name }}"
     source: "{{ item.url }}"
