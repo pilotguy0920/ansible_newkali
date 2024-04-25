@@ -63,4 +63,8 @@
     line: 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'
     state: present
     create: yes
+
+- name: Ensure pipx PATH is configured globally
+  command: sudo pipx ensurepath --global
+  become: true
   
