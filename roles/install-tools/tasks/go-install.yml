@@ -1,3 +1,5 @@
 ---
 - name: Install ldapnomnom using Go
   ansible.builtin.command: go install github.com/lkarlslund/ldapnomnom@latest
+- name: Install Kerberute using Go
+  ansible.builtin.command: go install github.com/ropnop/kerbrute@latest
