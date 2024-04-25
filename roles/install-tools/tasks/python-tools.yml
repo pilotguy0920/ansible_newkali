@@ -1,31 +1,33 @@
 ---
-- name: Debug - Find python path in pipx environment
-  command: which python
-  register: python_path
-- debug:
-   var: python_path
-
-- name: "Ensure pipx tools are installed"
+- name: Install impacket from github repository
   community.general.pipx:
-    name: "{{ item.name }}"
-    source: "{{ item.url }}"
+    name: impacket
     state: present
-    executable: "/usr/bin/python"  # Update path if needed
-  loop:
-    - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
-    - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
-    - { name: 'certipy-ad', url: 'git+https://github.com/ly5k/Certipy.git' }
-    - { name: 'crosslinked', url: 'git+https://github.com/m8sec/CrossLinked.git' }
-    - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git'}
+    path: /usr/local/bin
+    virtualenv: /usr/local/bin
+    force: yes
+    executable: /usr/local/bin/impacket
+    extra_args: --no-cache-dir
+    version: latest
 
-- name: "Upgrade pipx tools to latest version"
-  community.general.pipx:
-    name: "{{ item.name }}"
-    source: "{{ item.url }}"
-    state: latest
-  loop:
-    - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
-    - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
-    - { name: 'certipy-ad', url: 'git+https://github.com/ly5k/Certipy.git' }
-    - { name: 'crosslinked', url: 'git+https://github.com/m8sec/CrossLinked.git' }
-    - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git'}
+  - name: Install certipy from github repository
+    community.general.pipx:
+      name: certipy
+      state: present
+      path: /usr/local/bin
+      virtualenv: /usr/local/bin
+      force: yes
+      executable: /usr/local/bin/certipy
+      extra_args: --no-cache-dir
+      version: latest
+  
+  - name: Install Crosslinked from github repository
+    community.general.pipx:
+      name: crosslinked
+      state: present
+      path: /usr/local/bin
+      virtualenv: /usr/local/bin
+      force: yes
+      executable: /usr/local/bin/crosslinked
+      extra_args: --no-cache-dir
+      version: latest
