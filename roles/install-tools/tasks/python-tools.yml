@@ -10,7 +10,7 @@
     name: "{{ item.name }}"
     source: "{{ item.url }}"
     state: present
-    executable: "{{ python_path.stdout  }}"  # Update path if needed
+    executable: "/usr/bin/python"  # Update path if needed
   loop:
     - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
     - { name: 'crackmapexec', url: 'git+https://github.com/Porchetta-Industries/CrackMapExec.git' }
