@@ -65,6 +65,7 @@
     create: yes
 
 - name: Ensure pipx PATH is configured globally
-  command: sudo pipx ensurepath --global
+  command: sudo pipx ensurepath
+  command: pipx ensurepath
   become: true
   
