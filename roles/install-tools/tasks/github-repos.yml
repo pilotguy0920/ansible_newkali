@@ -6,6 +6,11 @@
   loop:
     - { repo: "https://github.com/Flangvik/SharpCollection", location: "/opt/SharpCollection" }
     - { repo: "https://github.com/0xZDH/o365spray", location: "/opt/o365spray" }
+    - { repo: "https://github.com/dafthack/MFASweep.git", location: "/opt/MFASweep" }
+    - { repo: "https://github.com/dafthack/GraphRunner.git", location: "/opt/GraphRunner" }
+    - { repo: "https://github.com/initstring/cloud_enum.git", location: "/opt/cloud_enum" }
+    - { repo: "https://github.com/knavesec/CredMaster.git", location: "/opt/CredMaster" }
+    
   become: true
   become_method: sudo
 
