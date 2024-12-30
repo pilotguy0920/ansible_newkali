@@ -10,6 +10,9 @@
     - { repo: "https://github.com/dafthack/GraphRunner.git", location: "/opt/GraphRunner" }
     - { repo: "https://github.com/initstring/cloud_enum.git", location: "/opt/cloud_enum" }
     - { repo: "https://github.com/knavesec/CredMaster.git", location: "/opt/CredMaster" }
+    - { repo: "https://github.com/dafthack/GraphRunner.git", location: "/opt/GraphRunner"}
+    - { repo: "https://github.com/blechschmidt/massdns.git", location: "/opt/massdns"}
+    - { repo: "https://github.com/nyxgeek/onedrive_user_enum.git", location: "/opt/onedrive_user_enum"}
     
   become: true
   become_method: sudo
@@ -36,7 +39,7 @@
     - { repo: "carlospolop/PEASS-ng",  regex: "linpeas.sh", location: "/opt/peas" }
     - { repo: "carlospolop/PEASS-ng",  regex: "winPEASx64.exe", location: "/opt/peas" }
     - { repo: "WithSecureLabs/chainsaw",  regex: "chainsaw_all_", location: "/opt/" }
-    - { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/" }
+    #- { repo: "BloodHoundAD/BloodHound", regex: "BloodHound-linux-x64.zip", location: "/opt/" }
   async: 45
   poll: 0
   become: true
